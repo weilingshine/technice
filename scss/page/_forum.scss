@@ -1,0 +1,625 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "../module/mixin";
+@import "../module/breakpoint";
+
+//論壇BN
+.banner {
+    background: linear-gradient(-90deg, #2196F3 0%, #0D47A1 100%);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 90px 30px;
+    @include b991 {
+        flex-direction: column;
+        padding: 30px 20px;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: -7%;
+        width: 100%;
+        height: 100%;
+        background: url(#{$assetPath}/banner_right_after.svg) right top no-repeat;
+        background-size: 70%;
+        opacity: 0.7;
+        z-index: 0;
+        @include b991 {
+            right: 0;
+            background-size: 100%;
+        }
+    }
+    .slogan {
+        width: 100%;
+        max-width: 605px;
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        z-index: 1;
+        @include b1190 {
+            max-width: 520px;
+        }
+        @include b991 {
+            width: calc(100% - 40px);
+            align-items: center;
+        }
+        span {
+            margin-bottom: 30px;
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 1.3333;
+            color: #e2e2e2;
+            @include b991 {
+                text-align: center;
+            }
+            @include b768 {
+                font-size: 16px;
+                margin-bottom: 15px;
+                line-height: 1.4;
+            }
+        }
+    }
+    h1 {
+        @include b991 {
+            margin: 0 0 25px 0;
+        }
+    }
+    h2 {
+        font-size: 120px;
+        font-weight: 100;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        margin-bottom: 20px;
+        @include b1190 {
+            font-size: 60px;
+        }
+        @include b768 {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+    }
+    b {
+        font-weight: bold;
+    }
+    .color_secondary {
+        color: #FFE500;
+    }
+    a {
+        color: #004397;
+        text-decoration: none;
+        background: #fff;
+        box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+        max-width: 380px;
+        width: calc( 100% - 40px );
+        font-size: 24px;
+        text-align: center;
+        font-weight: 700;
+        padding: 10px 0;
+        transition: .3s ease-in-out;
+        &:hover {
+            background: #FFE500;
+        }
+        @include b768 {
+            font-size: 18px;
+        }
+    }
+    .slogan_dec {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+        margin-left: -70px;
+        @include b991 {
+            margin-left: 0;
+        }
+        .slogan_img {
+            max-width: 750px;
+            width: 100%;
+            height: auto;
+            display: block;
+            @include b991 {
+                display: none;
+            }
+        }
+        .subtitle {
+            max-width: 500px;
+            width: 100%;
+            height: auto;
+            margin-top: 30px;
+        }
+    }
+}
+
+.articleBlock01,.articleBlock03 {
+    h3 {
+        font-size: 34px;
+        font-weight: 500;
+        color: #ffffff;
+        background: url(#{$assetPath}/title_bg.svg) center no-repeat;
+        background-size: 100%;
+        width: 100%;
+        height: 65px;
+        max-width: 245px;
+        padding: 0 30px;
+        line-height: 76px;
+        @include b991 {
+            font-size: 24px;
+            max-width: 190px;
+            height: 50px;
+            line-height: 58px;
+            padding: 0 25px;
+            margin-right: 0;
+        }
+    }
+}
+
+//議題探討
+.articleBlock01 {
+    padding: 60px 0 0 0;
+    overflow: hidden;
+    @include b1190 {
+        padding: 30px 20px 0 20px;
+    }
+    h3 {
+        margin-bottom: 40px;
+        @include b768 {
+            margin-bottom: 25px;
+        }
+    }
+    .article_content {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 90px;
+        flex-wrap: wrap;
+        padding: 0;
+        position: relative;
+        @include b1190 {
+        padding: 0 12px;
+        margin-bottom: 60px;
+        }
+        @include b640 {
+            padding: 0 30px;
+        }
+    }
+    .guest {
+        position: relative;
+        width: calc( 100% / 4 - 30px );
+        margin-bottom: 0;
+        z-index: 1;
+        @include b991 {
+        width: calc( 100% / 2 - 30px );
+        margin-bottom: 20px;
+        }
+        @include b640 {
+            width: 100%;
+        }
+        &:before,&:after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+        }
+        &::before {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(150deg, #2196F3 0%, #0D47A1 95%, transparent 95%);
+        }
+        &::after {
+            top: 4px;
+            left: 3px;
+            width: 98%;
+            height: 98%;
+            background: linear-gradient(150deg, #fff 0%, #fff, #fff, #fff 95%, transparent 95%);
+        }
+        img {
+            width: 100%;
+            margin: 13px 0 0 -12px;
+        }
+    }
+    .caption {
+        padding: 20px;
+        h2 {
+            font-weight: 700;
+            font-size: 26px;
+            margin-bottom: 8px;
+        }
+        p {
+        color: #282D33;
+            font-weight: 400;
+        }
+    }
+    .issue_content {
+        font-size: 48px;
+        font-weight: 400;
+        color: #0D47A1;
+        margin-bottom: 120px;
+        @include b1190 {
+            padding-left: 30px;
+        }
+        @include b768 {
+            padding-left: 100px;
+            font-size: 26px;
+            margin-bottom: 60px;
+        }
+        .issue_bg {
+            position: relative;
+            margin: 0 0 0 40px;
+            @include b768 {
+                margin: 0 0 0 -60px;
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                top: 24px;
+                left: -67px;
+                background: url("#{$assetPath}/title_frame01_bg.svg");
+                width: 580px;
+                height: 120px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                z-index: -1;
+                @include b768 {
+                    width: 100%;
+                    height: 65px;
+                    top: 15px;
+                    left: -40px;
+                    background-position: left;
+                }
+            }
+        }
+        span {
+            font-weight: 700;
+        }
+    }
+    .guest_vip {
+        &::after {
+            content: "";
+            display: inline-block;
+            background: url(#{$assetPath}/rectangle_element.svg) center no-repeat;
+            background-size: 100%;
+            width: 280px;
+            height: 280px;
+            position: absolute;
+            z-index: -2;
+            left: 17%;
+            top: 20%;
+        }
+    }
+    .guest_p01 {
+        &::before,&:after {
+            content: "";
+            display: inline-block;
+            background: url(#{$assetPath}/rectangle_element.svg) center no-repeat;
+            background-size: 100%;
+            position: absolute;
+            z-index: -2;
+        }
+        &::before {
+            width: 250px;
+            height: 250px;
+            left: -20%;
+            top: 40%;
+        }
+        &::after {
+            width: 450px;
+            height: 450px;
+            right: -30%;
+            top: -45%;
+            @include b768 {
+                top: auto;
+                bottom: 0;
+            }
+        }
+    }
+    .guest_p02 {
+        &::before {
+            content: "";
+            display: inline-block;
+            background: url(#{$assetPath}/rectangle_element.svg) center no-repeat;
+            background-size: 100%;
+            position: absolute;
+            z-index: -2;
+        }
+        &::before {
+            width: 250px;
+            height: 250px;
+            left: -20%;
+            top: 40%;
+        }
+    }
+}
+
+//議程規劃
+.articleBlock02 {
+  padding: 80px 0;
+  background: linear-gradient(90deg, #2196F3 0%, #0D47A1 100%);
+  @include b1190 {
+    padding: 60px 30px;
+  }
+  @include b768 {
+    padding: 30px 15px;
+  }
+  h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 36px;
+    margin-bottom: 40px;
+    font-weight: 200;
+    position: relative;
+    @include b1190 {
+      font-size: 30px;
+    }
+    @include b768 {
+      margin-bottom: 20px;
+    }
+    &:before,&:after {
+      content: "";
+      display: inline-block;
+      background: url(#{$assetPath}/title_white_bg.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 100%;
+      max-width: 505px;
+      height: 40px;
+      position: absolute;
+      background-size: cover;
+      @include b1190 {
+        max-width: 380px;
+        height: 30px;
+        background-repeat: repeat;
+      }
+      @include b991 {
+        max-width: 300px;
+      }
+      @include b768 {
+        display: none;
+      }
+    }
+    &:before {
+      left: 0;
+    }
+    &:after {
+      right: 0;
+    }
+  }
+  .agenda-plan {
+    margin-bottom: 60px;
+    @include b768 {
+      margin-bottom: 35px;
+    }
+  }
+  .item {
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 120px;
+      z-index: 0;
+      background: linear-gradient(155deg, transparent 8%, #000 8%,#000 92%,transparent 92%);
+      filter: blur(8px);
+      opacity: 0.25;
+      @include b768 {
+        display: none;
+      }
+    }
+  }
+  .itemblur {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(155deg, transparent 8%, #f7f7f7 8%,#f7f7f7 92%,transparent 92%);
+    padding: 30px 60px;
+    color: #0D47A1;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+    height: 120px;
+    @include b991 {
+      background: #f7f7f7;
+      height: auto;
+      padding: 25px 30px;
+    }
+    @include b768 {
+      flex-direction: column;
+      padding: 10px 15px;
+    }
+    .time {
+      font-size: 32px;
+      max-width: 205px;
+      display: block;
+      width: 100%;
+      text-align: right;
+      font-family: "Noto Sans TC";
+      @include b991 {
+        font-size: 24px;
+        max-width: 152px;
+      }
+    }
+    .text {
+      position: relative;
+      padding: 0 0 0 33px;
+      margin: 0 0 0 30px;
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      font-size: 28px;
+      line-height: 1.3333;
+      @include b991 {
+        font-size: 20px;
+      }
+      @include b768 {
+        padding: 8px 0 0 0;
+        margin: 0;
+        min-height: auto;
+        text-align: center;
+      }
+      &:before {
+        content: "";
+        display: inline-block;
+        width: 3px;
+        height: 100%;
+        background: linear-gradient(99.12deg, #2196F3 -10.98%, #0D47A1 105.41%);
+        position: absolute;
+        left: 0;
+        @include b768 {
+          display: none;
+        }
+      }
+      br {
+        @include b768 {
+          display: none;
+        }
+      }
+    }
+  }
+  .item+.item {
+    margin-top: 30px;
+    @include b768 {
+      margin-top: 15px;
+    }
+  }
+  .btn {
+    text-align: center;
+    a {
+      color: #004397;
+      font-size: 24px;
+      font-weight: 600;
+      background: #ffffff;
+      box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+      padding: 15px;
+      display: inline-block;
+      max-width: 350px;
+      width: 100%;
+      &:hover {
+        background: #FFE500;
+      }
+    }
+  }
+}
+
+//主辦、指導、協辦單位
+.articleBlock03 {
+  padding: 80px 0;
+  @include b1375 {
+    padding: 30px 0;
+  }
+  @include b1190 {
+    padding: 30px 20px;
+  }
+  h3 {
+    margin-right: 45px;
+    @include b991 {
+      margin-right: 0;
+    }
+  }
+  .unit {
+    display: flex;
+    align-items: center;
+    @include b991 {
+      flex-direction: column;
+    }
+  }
+  .unit+.unit {
+    @include b991 {
+      margin-top: 30px;
+    }
+  }
+  .unit-host {
+    .unit-img {
+      width: 100%;
+      max-width: 350px;
+      @include b991 {
+        max-width: 220px;
+      }
+    }
+  }
+  .unit-guide,.unit-organizer {
+    .unit-img {
+      width: 100%;
+      max-width: 200px; 
+      @include b551 {
+        text-align: center;
+      }
+      img {
+        @include b551 {
+          width: 100%;
+          max-width: 130px;
+        }
+      }
+    }
+    .unit-img+.unit-img {
+      margin-left: 70px;
+      @include b1375 {
+        margin-left: 30px;
+      }
+      @include b1024 {
+        margin-left: 60px;
+      }
+      @include b768 {
+        margin-left: 0;
+        margin-top: 10px;
+      }
+    }
+    span {
+      font-size: 24px;
+      line-height: 1.3333;
+      font-weight: 500;
+      min-height: 65px;
+      display: inline-block;
+      color: #000000;
+      @include b1375 {
+        font-size: 20px;
+      }
+      @include b991 {
+        font-size: 18px;
+        display: block;
+        text-align: center;
+        min-height: auto;
+      }
+    }
+    .unit-img {
+        a {
+            &:hover {
+                span {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+  }
+  .unit-img-group {
+    display: flex;
+    align-items: center;
+    @include b768 {
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 0 80px;
+    }
+    @include b551 {
+      flex-wrap: inherit;
+      justify-content: inherit;
+      flex-direction: column;
+      padding: 0
+    }
+    .unit-img {
+      @include b768 {
+        max-width: none;
+        width: calc((100% /2) - 30px);
+      }
+      @include b551 {
+        width: 100%;
+        max-width: 200px;
+      }
+    }
+  }
+}
