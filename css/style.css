@@ -956,11 +956,6 @@ footer .foot-link .link-social:hover img {
     display: none;
   }
 }
-@media (max-width: 768px) {
-  .articleBlock02 .itemblur .text br {
-    display: none;
-  }
-}
 .articleBlock02 .item + .item {
   margin-top: 30px;
 }

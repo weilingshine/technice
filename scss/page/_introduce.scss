@@ -495,11 +495,6 @@
           display: none;
         }
       }
-      br {
-        @include b768 {
-          display: none;
-        }
-      }
     }
   }
   .item+.item {
