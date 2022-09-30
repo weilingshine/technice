@@ -141,6 +141,7 @@
                             </div>
                         </div>
                     </div>
+                    <div class="swiper-pagination"></div>
                 </div>
                 <!-- <div class="btn-block text-center">
                     <a href="#"><span>看更多 最新新聞  ></span></a>
@@ -169,9 +170,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div class="btn-block text-center">
-                    <a href="#"><span>看更多 科技論壇  ></span></a>
-                </div> -->
             </div>
         </article>
         <article class="articleBlock expert-opinion">
@@ -311,12 +309,21 @@
     <script src="vendor/aos/aos.js"></script>
     <script>
         var swiper = new Swiper(".news-swiper", {
-            slidesPerView: 2,
-            centeredSlides: true,
+            slidesPerView: 1.2,
+            centeredSlides: false,
             spaceBetween: 30,
             grabCursor: true,
-            centeredSlides: true,
+            autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+            },
             breakpoints: {
+                576: {
+                    slidesPerView: 2.2,
+                },
+                768: {
+                    slidesPerView: 3,
+                },
                 991: {
                     slidesPerView: 3,
                     spaceBetween: 30,
@@ -345,11 +352,11 @@
             } else {
                 $('.opinion-content .swiper').addClass('opinion-swiper');
                 var swiper = new Swiper(".opinion-swiper", {
-                    slidesPerView: 2,
+                    slidesPerView: 1.2,
                     centeredSlides: true,
                     spaceBetween: 15,
                     grabCursor: true,
-                    centeredSlides: true,
+                    centeredSlides: false,
                     breakpoints: {
                         551: {
                             slidesPerView: 0,
@@ -375,7 +382,8 @@
                     centeredSlides: true,
                     spaceBetween: 15,
                     grabCursor: true,
-                    centeredSlides: true,
+                    centeredSlides: false,
+                
                     breakpoints: {
                         551: {
                             slidesPerView: 0,
