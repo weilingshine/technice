@@ -503,7 +503,7 @@ footer .foot-link .link-social:hover img {
   background: linear-gradient(90deg, #2196F3, #0D47A1);
   height: 590px;
   position: relative;
-  z-index: -1;
+  z-index: 1;
 }
 @media (max-width: 768px) {
   .newStars-banner {
